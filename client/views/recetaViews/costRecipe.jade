@@ -1,0 +1,15 @@
+div(ng-controller="costRecController").divTabCont.edgesTabCont
+  form
+    p.titulo Receta o Plato : {{ recipe.nameRecipe }} Costo : {{ recipe.costRecipe }}
+    p.subTitulo Costo Ingredientes o Productos
+    div#ingredient
+      table.table
+        tr
+          th.col-md-4.subTitulo Nombre Ingrediente
+          th.col-md-4.subTitulo Tipo Medida
+          th.col-md-4.subTitulo Costo
+        tr(ng-repeat="ingredient in ingredients")
+          td.col-md-4.subTitulo {{ingredient.nameIngredient}}
+          td.col-md-4.subTitulo {{ingredient.typeMeasure}}
+          td.col-md-4.subTitulo {{ingredient.costIngr}}
+    

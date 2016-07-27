@@ -1,0 +1,20 @@
+div(ng-controller="optCaltRecController")
+  div(ng-show="princTempl")#princMain.col-md-6.center-block.center-verct.no-float.center-text
+    div(ng-show="isUserConnected")
+      div 
+        input(type="text", placeholder='Filtrar Receta', ng-model="search")
+        div( ng-repeat=("recipe in Recipes | filter:search track by $index") ).animate-repeat 
+          {{ recipe.nameRecipe }}
+    h1
+      p(ng-click="enableRecipe()", ng-disabled="disableLogin").pacifico.btn.btn-lg.active.button-back-gr Calcular Receta o Plato
+  div(ng-hide="princTempl")
+    div.row
+      div.col-md-6.center-block.center-verct.no-float.center-text.row
+        nav.tabs-color
+          ul.no-padding-left.tabs-style.text-center
+            li(ng-repeat="tab in tabs | filter: { tabTemp: 'Y' }", ng-class="{'cambioColor': isActiveTab(tab.template) }", 
+               ng-click="onClickTab(tab)").sizeButton.col-md-4.inline-block.no-padding-hor {{tab.title}}
+        div(ng-include="currentTab").row
+      div.col-md-12.footer.no-padding-hor.adapt-margin.row
+        a(ng-click="backButton(currentTab)")#backButton.col-md-4.pacifico.btn.btn-lg.active.button-back-gr.sizeButton {{ nameBack }}
+        a(ng-click="fowardCostIngr(currentTab)").col-md-4.col-md-offset-4.pacifico.btn.btn-lg.active.button-back-gr.sizeButton {{ nameFoward }}

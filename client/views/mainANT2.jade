@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  body(ng-app="myRecetaApp", ng-class="{ 'backgroundLogin': isOnLogin }")
+    div(ng-controller="loginController")
+      div(ng-show="userConnected").col-md-12.text-right.adapt-margin.no-float
+        div.col-md-4.alinear
+          p(ng-click="logoutUser()").inline-block.sizeText desconectar
+          p.alinear.left-padding Conectado :{{ loginUser }}
+      div(ng-hide="userConnected").col-md-12.text-right.adapt-margin.no-float
+        ul.tabs-style
+          li(ng-click="newUserApp()").col-md-2.inline-block.sizeText.revelevant-text quieres registrarte?
+          li(ng-click="iniSessNav()").col-md-2.inline-block.sizeButton.pacifico.btn.btn-lg.active.button-back-gr Ini. Session
+        div(ng-hide="newUserOn").cssSlideUp.height-singUp
+          form.col-md-5.col-md-offset-7
+            div.form-group
+              label Nombre Usuario :
+              input(type="text", placeholder="Nombre Usuario", ng-model="login.nameOwner")
+            div.form-group
+              label Email : 
+              input(type="email", placeholder="Email address", ng-model="login.userOwner")
+            div.form-group
+              label Contraseña : 
+              input(type="password", placeholder="Password", ng-model="login.passOwner")
+            button(type="submit" ng-click="submitOwner(login)") Sign up
+        div(ng-hide="sessNavOn").cssSlideUp.height-singIn
+          form.col-md-5.col-md-offset-7.form-inline
+            div.form-group
+              label Email : 
+              input(type="email", placeholder="Email address", ng-model="login.userOwner")
+            div.form-group
+              label Contraseña : 
+              input(type="password", placeholder="Password", ng-model="login.passOwner")
+            div(ng-hide="sowMessUserLogin") {{ messUserLogin }} 
+            button(type="submit" ng-click="userLogin(login)") Sign in
+    
+    div(ng-controller="mainController")
+      div(ng-include="currentMain").row
+    
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-resource.min.js")
+  
+  script(src ="/clientUse/js/myRecetaApp.js")
+  script(src ="/clientUse/js/services/loginFactory.js")
+  script(src ="/clientUse/js/controllers/loginController.js")
+  script(src ="/clientUse/js/controllers/mainController.js")

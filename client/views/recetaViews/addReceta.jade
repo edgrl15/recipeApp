@@ -1,0 +1,30 @@
+div(ng-controller="recetaController")
+  form
+    label.titulo Receta o Plato : {{ nameRecipe }}
+    div(ng-show="isNewRecipe")#inputNewRecipe
+      input(type="text"  , ng-model="nvaRecipe", ng-class="{'shadowBox-error': isNullRecipe }").sizeText
+      input(type="button", value="Guardar", ng-click="saveReceta()").sizeText
+      p(ng-show="isNullRecipeSave").sizeText Debe Indicar una Receta!!!
+      
+    p.subTitulo Ingredientes o Productos
+    div.col-xs-18.col-sm-12
+      div.row
+        p.col-xs-6.col-sm-4.subTitulo.inline-block.left-text.no-padding-hor Nombre Ingrediente
+        p.col-xs-6.col-sm-4.subTitulo.inline-block.left-text.no-padding-hor Tipo Medida
+        p.col-xs-6.col-sm-4.subTitulo.inline-block.left-text.no-padding-hor Cant Ingred.
+      div.row.pre-scrollable.heightScroll
+        div(ng-repeat="ingredient in ingredientsDB")
+          div.col-xs-6.col-sm-4.subTitulo.inline-block.left-text.no-padding-hor {{ingredient.nameIngredient}}
+          div.col-xs-6.col-sm-4.subTitulo.inline-block.left-text.no-padding-hor {{ingredient.typeMeasure}}
+          div.col-xs-6.col-sm-4.subTitulo.inline-block.right-text.no-padding-hor 
+            p.col-xs-12.col-sm-8.inline-block.right-text.no-padding-hor  {{ingredient.cantIngredient}}
+            button(type="button", ng-click="removeIngred(ingredient)").col-xs-6.col-sm-4.buttonAlert.inline-block.right-text.no-padding-hor 
+              span(class="glyphicon glyphicon-remove colorDelete")
+      div.row
+        input(type="text"  , placeholder="Intro. Nombre Ingrediente", ng-model="ingredientsNew.nameIngredient", 
+          ng-class="{'shadowBox-error': isNullNameIngr }", ng-disabled="isNullRecipe").col-xs-6.col-sm-4.sizeText
+        select(ng-model="ingredientsNew.typeMeasure"  , ng-disabled="isNullRecipe",
+           ng-options="typeMeasure.typeMeasure as typeMeasure.typeMeasure for typeMeasure in typesMeasure").col-xs-3.col-sm-2.sizeText
+        input(type="number", placeholder="Intro. Cant.  Ingrediente", ng-model="ingredientsNew.cantIngredient",
+          ng-class="{'shadowBox-error': isNullCantIngr }", ng-disabled="isNullRecipe").col-xs-6.col-sm-4.sizeText
+        input(type="button", value="Guardar", ng-click="saveDB(nameRecipe, ingredientsNew)",ng-disabled="isNullRecipe").col-xs-3.col-sm-2.sizeText

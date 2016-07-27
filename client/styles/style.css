@@ -1,0 +1,128 @@
+.backgroundLogin {
+  background-color: #A3A3A5;
+}
+
+body {
+  background-color: #F2E2DF;
+  font-family: 'Dancing Script', cursive;
+}
+
+.pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+
+.center-verct {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer {
+  position: absolute;
+  top: 90%;
+}
+
+.center-text {
+  text-align:center;
+}
+
+.no-float {
+  float: none;
+}
+.button-back-gr{
+  background-color: #00cc33;
+  color: #fff;
+}
+
+.tabs-style li{
+  list-style   : none;
+}
+
+.no-padding-left {
+  padding-left: 0px;
+}
+
+.tabs-color {
+  background: #3CB371;
+}
+
+.inline-block {
+  float: none;
+  display: inline-block;
+  cursor: pointer
+}
+
+.left-padding {
+  padding-left: 20px;
+}
+
+.zoomText:focus, .zoomText:active, .zoomText:hover  {
+  transform: scale(1.1);
+}
+
+.alinear {
+  float: none;
+  display: inline-block;
+}
+
+.cambioColor{
+  background-color : #235C2C;
+  color: #ffffff;
+}
+
+.adapt-margin {
+  margin-left : 15px;
+  margin-right: 0px;
+}
+
+.no-padding-hor {
+  padding-left : 0px;
+  padding-right: 0px;
+}
+
+.colorDelete {
+  color: #B71C1C;
+}
+
+.colorEdit {
+  color: #9C640C;
+}
+
+.colorSave{
+  color: #235C2C;
+}
+.buttonAlert {
+  border: none;
+  background-color: transparent;
+}
+
+.titulo {
+  font-size: 3.0vw;
+}
+
+.subTitulo {
+  font-size: 2.0vw;
+}
+
+.sizeButton {
+  font-size: 1.8vw;
+}
+
+.sizeText {
+  font-size: 2vmin;
+}
+
+.heightScroll {
+  height: 30vh;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.left-text {
+  text-align: left;
+}

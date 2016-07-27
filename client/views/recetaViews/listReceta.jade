@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  body
+    div.derec.italicSytle
+      | esta Registrado?  
+      a(href="views/login/login").buttonHeading  Ini. Session
+    hr
+    div(ng-controller="selectController").centr
+      a
+      form
+        label(for="recetSelect")
+        select(name="recetSelect", id="recetSelect", ng-model="listRect.recetSelect") 
+          option(ng-repeat="option in listRect.recetOption", value="{{option._id}}") {{option.name}}
+      hr
+      tt repeatSelect = {{listRect.recetSelect}}
+
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-resource.min.js")
+  
+  script(src ="/clientUse/js/myRecetaApp.js")

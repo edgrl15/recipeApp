@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    h1=title
+    p Welcome to #{title}
+    div
+        a(href="/") Receta
+        a(href="/login") Login
+    div
+        div(ng-controller="RecetaIndexCtrl")
+            div.view-animate(ng-view)
+    div
+        p &copy; Company 2012
+
+    script(src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js")
+    script(src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js")
+    script(src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-resource.min.js")
+    script(src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-resource.min.js")
+    
+    script(src ="/jsUse/appAngular.js")
+    script(src ="/jsUse/services.js")
+    script(src ="/jsUse/controllers.js")
+    script(src ="/jsUse/filters.js")
+    script(src ="/jsUse/directives.js")
+    

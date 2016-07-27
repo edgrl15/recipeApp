@@ -1,0 +1,24 @@
+div(ng-controller="costIngController").divTabCont.edgesTabCont
+  form(name="CostIngrForm")
+    label.titulo Receta o Plato : {{ recipe.nameRecipe }}
+    p.subTitulo Costo Ingredientes o Productos
+    div.col-xs-18.col-md-12
+      div.row
+        p.col-xs-6.col-sm-4.subTitulo.inline-block.left-text.no-padding-hor Nombre Ingrediente
+        p.col-xs-5.col-sm-3.subTitulo.inline-block.left-text.no-padding-hor Tipo Medida
+        p.col-xs-7.col-sm-5.subTitulo.inline-block.left-text.no-padding-hor Costo
+      div.row.pre-scrollable.heightScroll
+        div.rowtr(ng-repeat="ingredient in ingredients")
+          div.col-xs-6.col-sm-4.subTitulo.inline-block.left-text.no-padding-hor {{ingredient.nameIngredient}}
+          div.col-xs-5.col-sm-3.subTitulo.inline-block.left-text.no-padding-hor {{ingredient.typeMeasure}}
+          div.col-xs-7.col-sm-5.subTitulo.inline-block.no-padding-hor
+            div(ng-show="ingredient.costUpd")
+              p.col-xs-12.col-sm-8.right-text.inline-block {{ingredient.costIngr}}
+              button(type="button", ng-click="removeIngr(ingredient)").col-xs-3.col-sm-2.inline-block.buttonAlert
+                span(class="glyphicon glyphicon-remove colorDelete")
+              button(type="button", ng-click="updActive(ingredient)").col-xs-3.col-sm-2.inline-block.buttonAlert
+                span(class="glyphicon glyphicon-pencil colorEdit")
+            div(ng-hide="ingredient.costUpd")
+              input(type="number", placeholder="Costo Ingrediente", name="cost", ng-model="ingredient.costIngr").col-xs-12.col-sm-8
+              button(type="button", ng-click="updateCostIng(ingredient)").col-xs-6.col-sm-4.buttonAlert
+                span(class="glyphicon glyphicon-ok colorSave")
