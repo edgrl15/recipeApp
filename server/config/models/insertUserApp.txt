@@ -1,0 +1,7 @@
+db.usersApp.insert([
+{
+    userOwner   : "edgard@gmail.com",
+    passOwner   : "1234",
+    nameOwner   : "Edgard Rendon",
+    dateCreate  : Date('Jul 22, 2016 16:20:00')
+}])

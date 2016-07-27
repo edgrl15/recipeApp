@@ -1,0 +1,36 @@
+db.measures.insert([
+{
+    typeMeasure: "Kg.",
+	descMeasure: "Kilo Gramos",
+	date: Date('Jul 21, 2016 16:20:00')
+},
+{
+    typeMeasure: "Lt.",
+	descMeasure: "Litros",
+	date: Date('Jul 21, 2016 16:20:00')
+},
+{
+    typeMeasure: "Taz.",
+	descMeasure: "Taza",
+	date: Date('Jul 21, 2016 16:20:00')
+},
+{
+    typeMeasure: "CuchS.",
+	descMeasure: "Cucharada Sopera",
+	date: Date('Jul 21, 2016 16:20:00')
+},
+{
+    typeMeasure: "Cuch.",
+	descMeasure: "Cucharada",
+	date: Date('Jul 21, 2016 16:20:00')
+},
+{
+    typeMeasure: "Und.",
+	descMeasure: "Unidad",
+	date: Date('Jul 21, 2016 16:20:00')
+},
+{
+	typeMeasure: "Doce.",
+	descMeasure: "Docena",
+	date: Date('Jul 21, 2016 16:20:00')
+}])
